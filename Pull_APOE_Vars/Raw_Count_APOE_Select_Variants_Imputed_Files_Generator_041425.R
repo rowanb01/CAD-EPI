@@ -1,0 +1,11 @@
+#The goal of this script is to make spreadsheets out of the gcounts from the unrelated and KING files for BioMe TopMED imputed datasets, until I can find the original genotype data
+library(openxlsx)
+Unrelated_BioMe_APOE_Selected <- read.delim("APOE_initial_Pull_041425.gcount", header=T, sep="\t")
+dim(Unrelated_BioMe_APOE_Selected)
+colnames(Unrelated_BioMe_APOE_Selected)
+Full_BioMe_APOE_Selected <- read.delim("V2_APOE_initial_Pull_041425.gcount", header=T, sep="\t")
+colnames(Full_BioMe_APOE_Selected)
+dim(Full_BioMe_APOE_Selected)
+write.xlsx(Unrelated_BioMe_APOE_Selected, "Unrelated_BioMe_Selected_APOE_gcounts_041425.xlsx")
+write.xlsx(Full_BioMe_APOE_Selected, "Full_BioMe_Selected_APOE_gcounts_041425.xlsx")
+q()
