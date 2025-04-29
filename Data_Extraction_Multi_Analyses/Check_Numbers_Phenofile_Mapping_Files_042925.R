@@ -10,10 +10,6 @@ dim(Mapping_Original)
 Id_Mapper_Current <- fread("/sc/arion/projects/igh/data/MSM/id_maps/subject_sample_mmrn_map_032025.txt")
 dim(Id_Mapper_Current)
 #The current file has more mappings than the original mapping file
-Pheno_Current_Match <- Phenotypes_FileA[match(intersect(Id_Mapper_Current$masked_mrn, Phenotypes_FileA$id), Phenotypes_FileA$id),]
-dim(Pheno_Current_Match)
-Pheno_Current_Match <- Phenotypes_FileA[match(intersect(Id_Mapper_Current$subject_id, Phenotypes_FileA$id), Phenotypes_FileA$id),]
-dim(Pheno_Current_Match)
 colnames(Id_Mapper_Current)
 Pheno_Current_Match <- Phenotypes_FileA[match(intersect(Id_Mapper_Current$sample_name, Phenotypes_FileA$id), Phenotypes_FileA$id),]
 colnames(Id_Mapper_Current)
