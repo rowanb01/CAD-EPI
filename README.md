@@ -3,7 +3,6 @@
 #Directories and what they house:
 #Pull_APOE_Vars which houses the APOE common variant pull scripts as well as data files used for generating such files
 #Pull_Pathogenic_Vars which houses pathogenic and protective variant call scripts and data files used for generating such files
-#Requested Files were used for storing spreadsheet output
 #Temp_Other_Scripts have intermediate scripts that were applied to multiple directories or generated intermediate files across directories
 #Temp_Rhistory for Rhistory files that have not made it to full Rscript stages yet
 
