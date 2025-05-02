@@ -6,6 +6,19 @@ library(data.table)
 Encounter_Subset_Cohort_ids <- fread("Encounters_Main_Cohort_050225.csv") 
 Lab_Subset_Cohort_ids <- fread("Labs_Main_Cohort_050225.csv")
 Phecode_Subset_Cohort_ids <- fread("Phecode_Main_Cohort_050225.csv")
+Main_Cohort <- fread("Main_Cohort_Adults_050225.csv")
+
+#Extract Main Cohort Age
+mean(Main_Cohort$Age)
+# 62.11354
+sd(Main_Cohort$Age)
+# 17.24474
+median(Main_Cohort$Age)
+# 64
+IQR(Main_Cohort$Age)
+# 28
+range(Main_Cohort$Age)
+# 18 92
 
 #CAD+ Extract ICD
 Subset_CAD_A <- Encounter_Subset_Cohort_ids[which(Encounter_Subset_Cohort_ids$dx_code1 == "I25.0" | Encounter_Subset_Cohort_ids$dx_code1 == "I25.1" | Encounter_Subset_Cohort_ids$dx_code1 == "I25.10" | Encounter_Subset_Cohort_ids$dx_code1 == "I25.11" | Encounter_Subset_Cohort_ids$dx_code1 == "I25.118" | Encounter_Subset_Cohort_ids$dx_code1 == "I25.119" | Encounter_Subset_Cohort_ids$dx_code1 == "I25.81" | Encounter_Subset_Cohort_ids$dx_code1 == "I25.82" | Encounter_Subset_Cohort_ids$dx_code1 == "I25.83" | Encounter_Subset_Cohort_ids$dx_code1 == "I25.84" | Encounter_Subset_Cohort_ids$dx_code1 == "414.0" | Encounter_Subset_Cohort_ids$dx_code1 == "414.01" | Encounter_Subset_Cohort_ids$dx_code1 == "414.02" | Encounter_Subset_Cohort_ids$dx_code1 == "414.03" | Encounter_Subset_Cohort_ids$dx_code1 == "414.04"),]
@@ -20,9 +33,11 @@ summary(as.factor(Primary_Dx_YN_Subset_CAD_A$GENDER))
 mean(Primary_Dx_YN_Subset_CAD_A$Age)
 # 76.86949
 sd(Primary_Dx_YN_Subset_CAD_A$Age)
+# 9.761093
 median(Primary_Dx_YN_Subset_CAD_A$Age)
 # 77
 IQR(Primary_Dx_YN_Subset_CAD_A$Age)
+# 14
 Primary_Dx_YN_Subset_CAD_A$Primary_Dx_Year <- format(as.Date(Primary_Dx_YN_Subset_CAD_A$encounter_date, format="%m/%d/%Y"), "%Y")
 range(Primary_Dx_YN_Subset_CAD_A$Primary_Dx_Year)
 # "2006" "2024"
@@ -105,6 +120,9 @@ mean(Test_Lab_Subset$CHOLESTEROL_IN_LDL_indiv_median)
 # 101.6712
 median(Test_Lab_Subset$CHOLESTEROL_IN_LDL_indiv_median)
 # 100
+png("Median_LDL-C_Hisotgram_050225.png")
+hist(Test_Lab_Subset$CHOLESTEROL_IN_LDL_indiv_median)
+dev.off()
 range(Test_Lab_Subset$Age)
 # 22 92
 mean(Test_Lab_Subset$Age)
