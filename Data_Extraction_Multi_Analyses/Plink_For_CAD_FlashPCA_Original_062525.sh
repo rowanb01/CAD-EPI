@@ -1,6 +1,7 @@
 #This shows the list of the plink commands used to produce the files used in the flashPCA analysis along with the flashPCA command used for the original Main Cohort subset to Sinead stated ancestry
 
 ml plink2/2.3
+ml plink
 
 #Subset to the matched snps from the pc sites
 for i in {1..22}; do plink2 --bgen /sc/arion/projects/MSM/data/common_variants/combined/batch_001/imputed_TOPMED/bgen/MSM_TOPMED.chr${i}.8bit.bgen ref-first --sample /sc/arion/projects/MSM/data/common_variants/combined/batch_001/imputed_TOPMED/bgen/MSM_TOPMED.chr${i}.sample --keep For_CAD_Samples_062425.txt --extract rsid_version_Updated_hg38_intersects_BioMe_eMERGE_prs_adjustment.pc.sites --export vcf --out VCF_CAD_for_FlashPCA_Original/CAD_chr${i}_062525; done
