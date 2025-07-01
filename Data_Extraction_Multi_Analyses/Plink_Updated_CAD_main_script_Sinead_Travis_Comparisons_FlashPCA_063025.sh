@@ -54,7 +54,7 @@ for i in {1..22}; do plink2 --bgen MSM_TOPMED_Renamed_chr${i}.bgen ref-first --s
 #Sinead Race and Ethnicity setting up for flashpca
 for i in {1..22}; do plink2 --vcf VCF_CAD_for_FlashPCA_Original/Norsid_V2_CAD_Sinead_Race_Ethnicity_chr${i}_063025.vcf --make-bed --out Binary_CAD_for_FlashPCA_Original/Norsid_V2_CAD_Sinead_Race_Ethnicity_Binary_chr${i}_063025; done
 
-plink --bfile Binary_CAD_for_FlashPCA_Original/Norsid_V2_CAD_Sinead_Race_Ethnicity_Binary_chr1_063025 --merge-list CAD_Travis_Ancestry_mergelist_V2.txt --make-bed --out Autosome_Sinead_Race_Ethnicity_Binary_CAD_for_FlashPCA_Stage2_063025
+plink --bfile Binary_CAD_for_FlashPCA_Original/Norsid_V2_CAD_Sinead_Race_Ethnicity_Binary_chr1_063025 --merge-list CAD_Sinead_Race_Ethnicity_mergelist_V2.txt --make-bed --out Autosome_Sinead_Race_Ethnicity_Binary_CAD_for_FlashPCA_Stage2_063025
 
 flashpca --bfile Autosome_Sinead_Race_Ethnicity_Binary_CAD_for_FlashPCA_Stage2_063025 --project --inmeansd Norsid_V2_hg38_intersects_BioMe_eMERGE_prs_adjustment.pc.meansd --outproj BioMe_Sinead_Race_Ethnicity_Projections_063025 --inload Norsid_V2_hg38_intersects_BioMe_eMERGE_prs_adjustment.pc.loadings -v
 
