@@ -13,7 +13,7 @@ dim(PGC_Travis_Catalog)
 # 41478  4831
 dim(Travis_Catalog_Subset)
 # 41478   173
-Travis_Projections <- fread("BioMe_Travis_Ancestry_Projections_062925")
+Travis_Projections <- fread("BioMe_Full_eMERGE_LiftOver_Travis_Ancestry_Projections_070125")
 dim(Travis_Projections)
 # 43534     7
 colnames(Travis_Projections)
@@ -98,6 +98,8 @@ ggplot() + geom_point(data=PGC_Second_Travis_Catalog, aes(x=PC1,y=PC3, colour = 
 savePlot("PC1_PC3_PGC_Second_Travis_Catalog_070125.png")
 ggplot() + geom_point(data=PGC_Second_Travis_Catalog, aes(x=PC1,y=PC4, colour = Ancestry), size=3) + scale_colour_manual(values=c("#3E8E72",'#D6EADF','#EAC4D5', "#95B8D1", "#3F61A2"))+ theme_classic() + theme(panel.border = element_rect(colour = "black",size=1,fill=NA)) + xlab("PC1") + ylab("PC4") + theme(legend.title = element_blank())
 savePlot("PC1_PC4_PGC_Second_Travis_Catalog_070125.png")
+ggplot() + geom_point(data=PGC_Second_Travis_Catalog, aes(x=PC2,y=PC3, colour = Ancestry), size=3) + scale_colour_manual(values=c("#3E8E72",'#D6EADF','#EAC4D5', "#95B8D1", "#3F61A2"))+ theme_classic() + theme(panel.border = element_rect(colour = "black",size=1,fill=NA)) + xlab("PC2") + ylab("PC3") + theme(legend.title = element_blank())
+savePlot("PC2_PC3_PGC_Second_Travis_Catalog_070125.png")
 ggplot() + geom_point(data=PGC_Second_Travis_Catalog, aes(x=PC2,y=PC4, colour = Ancestry), size=3) + scale_colour_manual(values=c("#3E8E72",'#D6EADF','#EAC4D5', "#95B8D1", "#3F61A2"))+ theme_classic() + theme(panel.border = element_rect(colour = "black",size=1,fill=NA)) + xlab("PC2") + ylab("PC4") + theme(legend.title = element_blank())
 savePlot("PC2_PC4_PGC_Second_Travis_Catalog_070125.png")
 ggplot() + geom_point(data=PGC_Second_Travis_Catalog, aes(x=PC3,y=PC4, colour = Ancestry), size=3) + scale_colour_manual(values=c("#3E8E72",'#D6EADF','#EAC4D5', "#95B8D1", "#3F61A2"))+ theme_classic() + theme(panel.border = element_rect(colour = "black",size=1,fill=NA)) + xlab("PC3") + ylab("PC4") + theme(legend.title = element_blank())
